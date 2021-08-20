@@ -1,5 +1,6 @@
 package com.java.dev01.exercise03.daos;
 
+import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,9 +11,7 @@ import com.java.dev01.exercise03.pojos.Event;
 import com.java.dev01.exercise03.util.HibernateFactory;
 import com.java.dev01.exercise03.util.DataAccessLayerException;
 
-import java.util.List;
-
-//The Data Access Object for managing the persistent Events.
+//Data Access Object (DAO ) para administrar la persistencia Events.
 public class EventDaoSimple {
     Log log = LogFactory.getLog(EventDaoSimple.class);
     private Session session;

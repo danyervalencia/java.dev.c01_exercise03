@@ -8,12 +8,7 @@ public class HibernateFactory {
     private static SessionFactory sessionFactory;
     private static Log log = LogFactory.getLog(HibernateFactory.class);
 
-    /**
-     * Constructs a new Singleton SessionFactory
-     *
-     * @return
-     * @throws HibernateException
-     */
+    // Constructs a new Singleton SessionFactory
     public static SessionFactory buildSessionFactory() throws HibernateException {
         if (sessionFactory != null) {
             closeFactory();
@@ -21,9 +16,7 @@ public class HibernateFactory {
         return configureSessionFactory();
     }
 
-    /**
-     * Builds a SessionFactory, if it hasn't been already.
-     */
+    // Builds a SessionFactory, de no haber sido creado
     public static SessionFactory buildIfNeeded() throws DataAccessLayerException {
         if (sessionFactory != null) {
             return sessionFactory;
@@ -74,11 +67,8 @@ public class HibernateFactory {
         }
     }
 
-    /**
-     * @return
-     * @throws HibernateException
-     */
     private static SessionFactory configureSessionFactory() throws HibernateException {
+        //SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Configuration configuration = new Configuration();
         configuration.configure();
         sessionFactory = configuration.buildSessionFactory();
